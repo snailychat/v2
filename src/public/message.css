@@ -71,3 +71,8 @@
     display: inline-block;
     
 }
+.idk {
+    position: fixed;
+    bottom: 0;
+    right:  0;
+}
