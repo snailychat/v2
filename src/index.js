@@ -15,11 +15,11 @@ const gg = (name) => {
     return readFileSync(__dirname + '/public/' + name, 'utf-8');
 }
 server.on('request', (req, res) => {
-    console.log(req)
-    if(req.href == 'ws.js') {
+    console.log(req.path)
+    if(req.path == 'ws.js') {
         res.writeHead(200);
         res.end(gg('ws.js'));
-    } else if(req.href == 'add_message.js') {
+    } else if(req.path == 'add_message.js') {
         res.writeHead(200);
         res.end(gg('add_message.js'));
     } else {
