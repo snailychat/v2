@@ -1,21 +1,21 @@
 {
-    "name": "backend",
+    "name": "v2",
     "version": "1.0.0",
-    "description": "--- The backend for snaily-chat",
-    "main": "app.js",
+    "description": "--- The v2 for snaily-chat",
+    "main": "src/inedx.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/snailychat/backend.git"
+      "url": "git+https://github.com/snailychat/v2.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/snailychat/backend/issues"
+      "url": "https://github.com/snailychat/v2/issues"
     },
-    "homepage": "https://github.com/snailychat/backend#readme",
+    "homepage": "https://github.com/snailychat/v2#readme",
     "dependencies": {
       "randomatic": "^3.1.1",
       "ws": "^7.5.3"
