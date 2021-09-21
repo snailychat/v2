@@ -2,6 +2,7 @@ const ws = require('ws');
 const randomatic = require('randomatic');
 const port = process.env.SERVER_PORT || process.env.PORT || 8080;
 
+const { readFileSync } = require('fs');
 const server = require('http').createServer();
 const wss = new ws.Server({
 	server
@@ -9,9 +10,22 @@ const wss = new ws.Server({
 server.listen(port, () => {
 	console.log(`On port: ${port}`);
 });
+
+const gg = (name) => {
+    return readFileSync(__dirname + '/public/' + name, 'utf-8');
+}
 server.on('request', (req, res) => {
-	res.writeHead(200);
-    res.end('Hello');
+    if(req.href == 'ws.js') {
+        res.writeHead(200);
+        res.end(gg('ws.js'));
+    } else if(req.href == 'add_message.js') {
+        res.writeHead(200);
+        res.end(gg('add_message.js'));
+    } else {
+        res.writeHead(200);
+        res.end(gg('index.html'));
+    }
+	
 });
 
 let connections = [];
